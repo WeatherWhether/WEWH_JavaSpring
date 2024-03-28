@@ -1,0 +1,73 @@
+{{> /layout/header}}
+
+{{#memberDto}}
+<div class="mybox">
+  <h3>{{memberId}}의 웨더웨더: {{memberArea1}}</h3>
+  <button><a href="/logout">로그아웃</a></button><br>
+</div>
+
+{{#areaDto}}
+<p id="nameEn" style="display: none;">{{nameEn}}</p><br>
+<div id="ww_d3205885063b4" v='1.3' loc='id' a='{"t":"horizontal","lang":"ko","sl_lpl":1,"ids":["{{code}}"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
+  More forecasts: 
+  <a href="https://oneweather.org/seoul/30_days/" id="ww_d3205885063b4_u" target="_blank">Seoul 30 day forecast</a>
+</div>
+{{/areaDto}}
+
+<div class="weather_table_wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>🌈Weather Whether?⛈️</th><th><a id="day">day</a></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>예보 시각</td><td><a id="time">time</a>시</td>
+      </tr>
+      <tr>
+        <td>온도</td><td><a id="temp">temp</a>&#176;C</h3></td>
+      </tr>
+      <tr>
+        <td>체감온도</td><td><a id="feels_like">feels_like</a>&#176;C</td>
+      </tr>
+      <tr>
+        <td>습도</td><td><a id="humidity">humidity</a>&#37;</td>
+      </tr>
+      <tr>
+        <td>풍속</td><td><a id="wind_speed">wind_speed</a>m/s</td>
+      </tr>
+      <tr>
+        <td>강수확률</td><td><a id="rainfall">rainfall</a>&#37;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<blockquote>
+  <div class="weather_reply_wrapper">
+    <h3>실시간 웨더피드</h3>
+    
+    <form action="/member/reply/custom" method="post">
+      <p> <!-- name이 동일하면, DB table에서 column명 찾아서 자동 맵핑! -->
+        <textarea rows="5" cols="30" name="comment" style="width: 227px; height: 15px;">오늘 날씨 어떤가요?</textarea>
+        <button type="submit">댓글 남기기</button>
+      </p>
+    </form>
+    
+    {{#mainboard}}
+    <p>{{createdate}} | {{memberId}} | {{memberArea1}} | {{memberClass}}<br>
+      {{comment}}</p>
+      {{/mainboard}}
+      
+      {{^mainboard}}
+      <p>아직 아무런 소식이 없네요...</p>
+      {{/mainboard}}
+    </blockquote>
+{{/memberDto}}
+
+<button><a href="/mainboard">웨더보드로 돌아가기</a></button>
+
+<script src="/static/js/member.js"></script>
+<script async src="https://app2.weatherwidget.org/js/?id=ww_d3205885063b4"></script>
+{{> /layout/footer}}

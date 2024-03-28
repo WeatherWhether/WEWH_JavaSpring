@@ -1,0 +1,14 @@
+{{> /layout/header}}
+<div id="whiteBox" class="blueBG">
+    <h3>로그인 하는 페이지</h3>
+    {{#errorMessage}}
+    <p>{{errorMessage}}</p>
+    {{/errorMessage}}
+    <form action="/login" method="post">
+        <input type="text" name="username" placeholder="아이디 입력"/> <br>
+        <input type="password" name="password" placeholder="비밀번호 입력"/> <br>
+        <input type="submit" name="login" id="btn"/>
+    </form>
+    <a href="/join">아직 회원 가입을 하지 않으셨다구욥?</a>
+</div>
+{{> /layout/footer}}

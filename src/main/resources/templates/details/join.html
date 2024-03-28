@@ -1,0 +1,25 @@
+{{> /layout/header}}
+<div id="whiteBox" class="blueBG">
+    <h3>웨더보드 가입해 주세욥!</h3>
+    <hr>
+    <form action="/join" method="post">
+        <input type="text" name="memberId" placeholder="User Name"/>
+        <br />
+        <input type="password" name="password" placeholder="Password"/>
+        <br />
+        <select name="memberClass">
+            <option value="냉방인">냉방인</option>
+            <option value="난방인">난방인</option>
+            <option value="반반인">반반인</option>
+        </select>
+        <br>
+        <select name="memberArea1">
+            {{#areaList}}
+            <option value="{{nameKo}}">{{nameKo}}</option>
+            {{/areaList}}
+        </select>
+        <input type="submit" value="join" id="btn"/>
+    </form>
+    <a href="/loginForm">이미 회원가입을 하셨나욥?</a>
+</div>
+{{> /layout/footer}}

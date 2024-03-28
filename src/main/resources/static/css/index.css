@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/*폰트 가져와서 입히기*/
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        } 
+
+        .blueBG {
+            background-color: #b6d5f6f5;
+        }
+
+        #whiteBox {
+            margin: auto;
+            width: 300px;
+            background-color: #EEEFF1;
+            border-radius: 5px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .in {
+            margin-bottom: 10px;
+        }
+
+        #btn {
+            background-color: #5580ea;
+            margin-bottom: 15px;
+            color: white;
+        }
+        #btn2{
+          background-color: #eff0ec;
+            margin-bottom: 10px;
+            color: rgb(237, 77, 77);
+          text-align: right;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(79, 79, 79);
+            font-size: 15px;
+        }
+
+
+        hr.hr-10:after {
+            content: '';
+            display: block;
+            margin-top: 2px;
+            border-top: 1px solid #8c8c8c;
+            border-bottom: 1px solid #fff;
+        }
+        body {
+          color: #666;
+          font: 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+        }
+        table {
+          border-collapse: separate;
+          border-spacing: 0;
+          width: 50%;
+        }
+        th,
+        td {
+          padding: 6px 15px;
+        }
+        th {
+          background: #42444e;
+          color: #fff;
+          text-align: left;
+        }
+        tr:first-child th:first-child {
+          border-top-left-radius: 6px;
+        }
+        tr:first-child th:last-child {
+          border-top-right-radius: 6px;
+        }
+        td {
+          border-right: 1px solid #c6c9cc;
+          border-bottom: 1px solid #c6c9cc;
+        }
+        td:first-child {
+          border-left: 1px solid #c6c9cc;
+        }
+        tr:nth-child(even) td {
+          background: #eaeaed;
+        }
+        tr:last-child td:first-child {
+          border-bottom-left-radius: 6px;
+        }
+        tr:last-child td:last-child {
+          border-bottom-right-radius: 6px;
+        }
+        blockquote {
+          margin: 0px 0px 1.75em 0px;
+          position: relative;
+          padding: 2px 5px;
+          background: #fbf8a2;
+          border-collapse: separate;
+          border-spacing: 0;
+          width: 50%;
+      }

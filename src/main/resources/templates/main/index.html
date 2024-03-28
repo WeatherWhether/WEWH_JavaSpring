@@ -1,0 +1,43 @@
+{{> /layout/header}}
+
+<div class="mybox">
+{{^memberId}}
+    <button id="btn2"><a href="/join">아직 웨더보드 멤버가 아니시라구욥?</a></button><br>
+    <button id="btn2"><a href="/loginForm">웨더보드 멤버이신가욥?</a></button>
+{{/memberId}}
+{{#memberId}}
+    <button><a href="/member/custom">{{memberId}}의 웨더웨더</a></button>
+    <button><a href="/logout">로그아웃</a></button>
+{{/memberId}}
+</div>
+<br>
+
+<div id="idfc66b58215eb3"
+a='{"t":"b","v":"1.2","lang":"ko","locs":[873,876,880,874,3912,879,878,3909,877],"ssot":"c","sics":"ds","cbkg":"#616161","cfnt":"#FFFFFF","ceb":"#FFFFFF","cef":"#000000"}'>
+    <a href="https://sharpweather.com/widgets/">HTML Weather widget for website</a> by sharpweather.com
+</div>
+<script async src="https://static1.sharpweather.com/widgetjs/?id=idfc66b58215eb3"></script>
+
+<blockquote>
+    <h3>실시간 웨더피드</h3>
+
+    {{#memberId}}
+    <form action="/member/reply/index" method="post">
+        <p> <!-- name이 동일하면, DB table에서 column명 찾아서 자동 맵핑! -->
+            <textarea rows="5" cols="30" name="comment" style="width: 227px; height: 15px;">오늘 날씨 어떤가요?</textarea>
+            <button type="submit">댓글 남기기</button>
+        </p>
+    </form>
+    {{/memberId}}
+
+    {{#mainboard}}
+    <p>{{createdate}} | {{memberId}} | {{memberArea1}} | {{memberClass}}<br>
+        {{comment}}</p>
+    {{/mainboard}}
+
+    {{^mainboard}}
+    <p>아직 아무런 소식이 없네요...</p>
+    {{/mainboard}}
+</blockquote>
+
+{{> /layout/footer}}
